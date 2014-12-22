@@ -54,6 +54,7 @@ angular.module("ng-slide-down", []).directive "ngSlideDown", ($timeout )->
       }
       if emitOnClose || onClose || lazyRender
         closePromise = $timeout ()->
+          element.css("overflow", "inital")
           scope.$emit emitOnClose, {} if emitOnClose
           elementScope.$eval(onClose) if onClose
           scope.lazyRender = false if lazyRender

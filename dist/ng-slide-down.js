@@ -70,7 +70,8 @@
           });
           if (emitOnClose || onClose || lazyRender) {
             return closePromise = $timeout(function () {
-              if (emitOnClose) {
+              element.css("overflow", "inital");
+			  if (emitOnClose) {
                 scope.$emit(emitOnClose, {});
               }
               if (onClose) {
